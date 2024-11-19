@@ -1,2 +1,1 @@
-# AmazonPOC-CucumberBDD
-AmazonPOC-CucumberBDD
+# CucumberBDDFrameworkByRKITTrainingHUB
