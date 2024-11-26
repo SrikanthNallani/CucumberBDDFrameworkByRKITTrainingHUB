@@ -2,7 +2,7 @@
 Feature: Product Description validation in amazon website.
 
   @AmazonSecondHighestPriceTV @Regression
-  Scenario: Amazon website validations
+  Scenario: Amazon website validations for televisions
     Given User navigates to Amazon app URL
     When I click on "HamBurger" button
     And I scroll to "ShopByDepartment" element
