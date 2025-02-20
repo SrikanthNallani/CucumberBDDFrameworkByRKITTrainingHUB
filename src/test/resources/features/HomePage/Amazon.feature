@@ -35,3 +35,19 @@ Feature: Product Description validation in amazon website.
     And Switch to next window
     And verify "AboutThisItem" element presence
     And log the "ItemDiscription" element description to report and console
+  @AmazonSecondHighestPriceMobile @Regression
+  Scenario: Amazon website validations for Cameras
+    Given User navigates to Amazon app URL
+    When I click on "HamBurger" button
+    And I scroll to "ShopByDepartment" element
+    And I click on "MobilesAndComputers" link
+    And I click on "AllMobilePhones" link with JS
+    #And I scroll to "Brands" element
+   #And I click on "Brands" checkbox
+    And I click on "SamsungMobile" checkbox
+    When I click on "SortByFeature" button
+    And I click on "HighToLow" link
+    And I click on "SecondHighestPriceItem" link
+    And Switch to next window
+    And verify "AboutThisItem" element presence
+    And log the "ItemDiscription" element description to report and console

@@ -107,4 +107,12 @@ WebDriver driver;
             e.printStackTrace();
         }
     }
+    public void clickButtonJS(String ele) {
+        try {
+            wc.PerformActionOnElement(ele, "ClickJS", "");
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
 }

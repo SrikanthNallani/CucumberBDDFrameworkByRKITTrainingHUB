@@ -216,6 +216,12 @@ WebDriver driver;
 			wait.until(ExpectedConditions.elementToBeClickable(getElementWithLocator(WebElement)));
 			FindAnElement(WebElement).click();
 			break;
+			case "ClickJS":
+				Thread.sleep(2000);
+				JavascriptExecutor js= (JavascriptExecutor) driver;
+				js.executeScript("arguments[0].click()",FindAnElement(WebElement));
+
+				break;
 		case "ClickIfExists":
 			try {
 				if (driver.findElements(getElementWithLocator(WebElement)).size() > 0) {
