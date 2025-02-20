@@ -59,6 +59,10 @@ public class HomePageSteps extends webconnector {
     public void clickButton(String element) throws InvalidFormatException, IOException {
         this.homePage.clickButton(element);
     }
+    @When("I click on {string} link with JS")
+    public void clickButtonwithJS(String element) throws InvalidFormatException, IOException {
+        this.homePage.clickButtonJS(element);
+    }
     @And("I click on {string} checkbox")
     public void clickCheckbox(String element) throws InvalidFormatException, IOException {
         this.homePage.clickButton(element);
