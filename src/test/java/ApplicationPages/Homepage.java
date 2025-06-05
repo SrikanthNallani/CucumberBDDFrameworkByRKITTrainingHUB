@@ -57,13 +57,10 @@ WebDriver driver;
             e.printStackTrace();
         }
     }
-    public void isElementExist(String ele) {
-        try {
+    public void isElementExist(String ele) throws Exception {
+
             wc.PerformActionOnElement(ele, "ElementExist", "");
-        } catch (Exception e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+
     }
     public void getElementDescrition(String ele) {
         try {
@@ -102,14 +99,6 @@ WebDriver driver;
     public void clickButton(String ele) {
         try {
             wc.PerformActionOnElement(ele, "Click", "");
-        } catch (Exception e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-    }
-    public void clickButtonJS(String ele) {
-        try {
-            wc.PerformActionOnElement(ele, "ClickJS", "");
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
