@@ -5,6 +5,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.sql.Driver;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -203,6 +204,15 @@ WebDriver driver;
 		return driver.findElement(getElementWithLocator(WebElement));
 	}
 
+	public List FindAnElements(String WebElement) throws Exception {
+		Thread.sleep(1000);
+		WebDriverWait wait = new WebDriverWait(driver, 80);
+		wait.until(ExpectedConditions.presenceOfElementLocated(getElementWithLocator(WebElement)));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(getElementWithLocator(WebElement)));
+
+		return driver.findElements(getElementWithLocator(WebElement));
+	}
+
 	public String getPageTitle() {
 		String title = driver.getTitle();
 		return title;
@@ -212,32 +222,22 @@ WebDriver driver;
 		switch (Action) {
 		case "Click":
 			Thread.sleep(2000);
-			WebDriverWait wait = new WebDriverWait(driver, 80);
+			WebDriverWait wait = new WebDriverWait(driver, 10);
 			wait.until(ExpectedConditions.elementToBeClickable(getElementWithLocator(WebElement)));
 			FindAnElement(WebElement).click();
 			break;
-			case "ClickJS":
-				Thread.sleep(2000);
-				JavascriptExecutor js= (JavascriptExecutor) driver;
-				js.executeScript("arguments[0].click()",FindAnElement(WebElement));
-
-				break;
 		case "ClickIfExists":
-			try {
+
 				if (driver.findElements(getElementWithLocator(WebElement)).size() > 0) {
 					FindAnElement(WebElement).click();
 				}
-			} catch (NoSuchFieldException e) {
-
-			}
 			break;
 		case "ElementExist":
-			try {
-				Assert.assertTrue(FindAnElement(WebElement).isDisplayed());
+			boolean status=FindAnElements(WebElement).size()>0;
 
-			} catch (NoSuchFieldException e) {
+				Assert.assertTrue(status);
 
-			}
+
 			break;
 		case "CloseTab":
 			try {
