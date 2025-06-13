@@ -19,18 +19,18 @@ import org.testng.annotations.*;
 
 public class HomePageSteps extends webconnector {
     private Homepage homePage;
-	private String scenDesc;
+    private String scenDesc;
 
     public HomePageSteps() {
         this.homePage = new Homepage();
     }
 
-    
 
-	@BeforeStep
-	public void beforeStep() throws InterruptedException {
-		Thread.sleep(2000);
-	}
+
+    @BeforeStep
+    public void beforeStep() throws InterruptedException {
+        Thread.sleep(2000);
+    }
 
     @Given("^User navigates to QATechTesting HomePage$")
     public void aUserNavigatesToHomePage() throws InvalidFormatException, IOException {
@@ -40,7 +40,7 @@ public class HomePageSteps extends webconnector {
     public void aUserNavigatesToURL() throws InvalidFormatException, IOException {
         this.homePage.goToHomePage();
     }
-    
+
     @When("I enter {string} text in {string} field")
     public void inputText(String txt, String element) throws InvalidFormatException, Exception {
         this.homePage.inputText(element,txt);
@@ -54,6 +54,10 @@ public class HomePageSteps extends webconnector {
     @When("I click on {string} link")
     public void clickLink(String element) throws InvalidFormatException, IOException {
         this.homePage.clickButton(element);
+    }
+    @When("I click on {string} link with JS")
+    public void clickButtonwithJS(String element) throws InvalidFormatException, IOException {
+        this.homePage.clickButtonJS(element);
     }
     @When("I click on {string} button")
     public void clickButton(String element) throws InvalidFormatException, IOException {
@@ -91,7 +95,7 @@ public class HomePageSteps extends webconnector {
     public void swichWindow() throws Exception {
         this.homePage.switchToNextWindow();
     }
-    
+
     @Then("I select the {string} value from {string} Dropdown")
     public  void selectDropDown(String val, String dropdown){
         this.homePage.selectText(dropdown,val);

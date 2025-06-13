@@ -14,10 +14,10 @@ public class Homepage {
     webconnector wc = new webconnector();
 
 
-WebDriver driver;
+    WebDriver driver;
     public void goToHomePage() throws InvalidFormatException, IOException {
-      wc.setUpDriver();
-      driver= DriverFactory.get();
+        wc.setUpDriver();
+        driver= DriverFactory.get();
         String URL = wc.getSpecificColumnData("./src/test/testdata/data.xlsx", "sheet1", "URL");
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         driver.get(URL);
@@ -33,22 +33,22 @@ WebDriver driver;
         }
     }
     public void scrollToWebElement(String ele) {
-    	 try {
-             wc.PerformActionOnElement(ele, "Scroll", "");
-         } catch (Exception e) {
-             // TODO Auto-generated catch block
-             e.printStackTrace();
-         }
+        try {
+            wc.PerformActionOnElement(ele, "Scroll", "");
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
     }
     public void closeCurrentWindowScreen()
     {
-   	 try {
+        try {
             wc.PerformActionOnElement("", "CloseTab", "");
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-   }
+    }
     public void checkBlogLinkDisplayIfExists() {
         try {
             wc.PerformActionOnElement("BlogLink_HomePage", "ClickIfExists", "");
@@ -59,7 +59,7 @@ WebDriver driver;
     }
     public void isElementExist(String ele) throws Exception {
 
-            wc.PerformActionOnElement(ele, "ElementExist", "");
+        wc.PerformActionOnElement(ele, "ElementExist", "");
 
     }
     public void getElementDescrition(String ele) {
@@ -95,7 +95,14 @@ WebDriver driver;
             e.printStackTrace();
         }
     }
-
+    public void clickButtonJS(String ele) {
+        try {
+            wc.PerformActionOnElement(ele, "ClickJS", "");
+        } catch (Exception e) {
+// TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
     public void clickButton(String ele) {
         try {
             wc.PerformActionOnElement(ele, "Click", "");
