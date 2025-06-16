@@ -35,7 +35,7 @@ Feature: Product Description validation in amazon website.
     And verify "AboutThisItem" element presence
     And log the "ItemDiscription" element description to report and console
 
-  @AmazonSecondHighestPriceMobile @Regression
+  @AmazonSecondHighestPriceCamera @Regression
   Scenario: Amazon website validations for Cameras
     When I click on "HamBurger" button
     And I scroll to "ShopByDepartment" element

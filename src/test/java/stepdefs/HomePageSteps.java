@@ -29,7 +29,7 @@ public class HomePageSteps extends webconnector {
 
     @BeforeStep
     public void beforeStep() throws InterruptedException {
-        Thread.sleep(2000);
+        Thread.sleep(3000);
     }
 
     @Given("^User navigates to QATechTesting HomePage$")
