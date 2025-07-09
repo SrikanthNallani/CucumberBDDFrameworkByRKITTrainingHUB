@@ -50,3 +50,17 @@ Feature: Product Description validation in amazon website.
     And Switch to next window
     And verify "AboutThisItem" element presence
     And log the "ItemDiscription" element description to report and console
+
+  @AmazonSecondHighestPriceWatch @Regression
+  Scenario: Amazon website validations for Watches
+    When I click on "HamBurger" button
+    And I scroll to "ShopByDepartment" element
+    And I click on "Women'sFashion" link
+    And I click on "Watches" link with JS
+    And I scroll to "TIMEX" element
+    And I click on "TIMEX" checkbox
+    When I click on "SortByFeature" button
+    And I click on "HighToLow" link
+    And I click on "SecondHighestPriceItem" link
+    And verify "AboutThisItemWatch" element presence
+    And log the "ItemDiscriptionWatch" element description to report and console
