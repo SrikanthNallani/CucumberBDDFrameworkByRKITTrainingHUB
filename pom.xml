@@ -103,6 +103,8 @@
 					<sourceJsonReportDirectory>${project.build.directory}/json-cucumber-reports</sourceJsonReportDirectory>
 					<generatedHtmlReportDirectory>${project.build.directory}/generated-report</generatedHtmlReportDirectory>
 					<expandStepHooks>true</expandStepHooks>
+                    <expandAttachments>true</expandAttachments>
+                    <expandBeforeAfterHooks>true</expandBeforeAfterHooks>
 				</configuration>
 			</plugin>
 

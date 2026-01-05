@@ -221,12 +221,12 @@ public class webconnector<V> {
         switch (Action) {
             case "Click":
                 Thread.sleep(2000);
-                WebDriverWait wait = new WebDriverWait(driver, 10);
-                wait.until(ExpectedConditions.elementToBeClickable(getElementWithLocator(WebElement)));
                 FindAnElement(WebElement).click();
                 break;
             case "ClickJS":
                 Thread.sleep(2000);
+                WebDriverWait wait = new WebDriverWait(driver, 60);
+                wait.until(ExpectedConditions.elementToBeClickable(getElementWithLocator(WebElement)));
                 JavascriptExecutor js = (JavascriptExecutor) driver;
                 js.executeScript("arguments[0].click()", FindAnElement(WebElement));
 
@@ -270,10 +270,10 @@ public class webconnector<V> {
                 FindAnElement(WebElement).sendKeys(Keys.TAB);
                 break;
             case "Scroll":
-
+                wait = new WebDriverWait(driver, 60);
+                wait.until(ExpectedConditions.visibilityOfElementLocated(getElementWithLocator(WebElement)));
                 Actions act = new Actions(driver);
-                Action action = (Action) act.moveToElement(FindAnElement(WebElement)).build();
-                action.perform();
+                act.moveToElement(FindAnElement(WebElement)).build().perform();
                 break;
             case "Clear":
                 FindAnElement(WebElement).clear();

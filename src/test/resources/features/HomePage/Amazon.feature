@@ -15,7 +15,7 @@ Feature: Product Description validation in amazon website.
     And I click on "HighToLow" link
     And I click on "SecondHighestPriceItem" link
     And Switch to next window
-    And verify "AboutThisItem" element presence
+    Then verify "AboutThisItem" element presence
     And log the "ItemDiscription" element description to report and console
 
   @AmazonSecondHighestPriceCameras @Regression
@@ -57,8 +57,8 @@ Feature: Product Description validation in amazon website.
     And I scroll to "ShopByDepartment" element
     And I click on "Women'sFashion" link
     And I click on "Watches" link with JS
-    And I scroll to "TIMEX" element
-    And I click on "TIMEX" checkbox
+    And I scroll to "TOP_BRANDS" element
+    And I click on "TOP_BRANDS" link with JS
     When I click on "SortByFeature" button
     And I click on "HighToLow" link
     And I click on "SecondHighestPriceItem" link

@@ -32,13 +32,12 @@ public class Homepage {
             e.printStackTrace();
         }
     }
-    public void scrollToWebElement(String ele) {
-        try {
+    public void scrollToWebElement(String ele) throws Exception {
+
             wc.PerformActionOnElement(ele, "Scroll", "");
-        } catch (Exception e) {
             // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+
+
     }
     public void closeCurrentWindowScreen()
     {

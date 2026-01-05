@@ -12,8 +12,13 @@ import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.DataProvider;
 
 
-@CucumberOptions( tags = {"@AmazonSecondHighestPriceWatch"},glue = {"stepdefs"}, plugin = {"html:target/cucumber-reports/HomePage/cucumber-pretty","json:target/json-cucumber-reports/homepage/cukejson.json",
-		"testng:target/testng-cucumber-reports/HomePage/cuketestng.xml" }, features = {"src/test/resources/features/HomePage"})
+@CucumberOptions(
+
+        tags = {"@AmazonSecondHighestPriceWatch"},
+        glue = {"stepdefs"},
+        plugin = {"html:target/cucumber-reports/HomePage/cucumber-pretty","json:target/json-cucumber-reports/homepage/cukejson.json",
+		"testng:target/testng-cucumber-reports/HomePage/cuketestng.xml" },
+        features = {"src/test/resources/features/HomePage"})
 public class HomePageRunner extends AbstractTestNGCucumberTests {
 
 	@BeforeClass
