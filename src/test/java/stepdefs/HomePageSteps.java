@@ -80,7 +80,7 @@ public class HomePageSteps extends webconnector {
         this.homePage.getElementDescrition(element);
     }
     @And("I scroll to {string} element")
-    public void scrollToElement(String element) throws InvalidFormatException, IOException {
+    public void scrollToElement(String element) throws Exception {
         this.homePage.scrollToWebElement(element);
     }
     @Then( "I close the current window")
